@@ -21,6 +21,6 @@
 
 ## 大功告成
 每天会在8:00进行自动签到。(有时候会延迟10~20分钟)
-
+![1](img/1.png)
 ## 参考项目
 [checkin](https://github.com/lepecoder/checkin)
