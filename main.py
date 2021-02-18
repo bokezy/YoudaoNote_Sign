@@ -9,16 +9,11 @@ from email.mime.text import MIMEText
 
 urllib3.disable_warnings()
 
-# username = os.environ['USERNAME']
-# password = os.environ['PASSWORD']
-# mail     = os.environ['MAIL']
-# success  = os.environ['SUCCESS']
-# key      = os.environ['KEY']
-username = 'haycvbnm@163.com'
-password = '123456789zy'
-success = 'SCU156152T14435ae80a60fcecdae6da9d67842bca60138c301ed8d'
-mail = 'bokezy@qq.com'
-key = 'fumqpbhroyvhdhge'
+username = os.environ['USERNAME']
+password = os.environ['PASSWORD']
+mail     = os.environ['MAIL']
+success  = os.environ['SUCCESS']
+key      = os.environ['KEY']
 
 
 # 获取北京时间函数
@@ -109,5 +104,3 @@ def sendEmail(mail, key, subject, txt):
 
 if __name__ == "__main__":
     Sign(username, password)
-    # WechatPush('有道云签到失败', success, username, '1', '1')
-    # sendEmail('bokezy@qq.com', 'fumqpbhroyvhdhge', '有道云_签到成功', '有道云_签到成功')
