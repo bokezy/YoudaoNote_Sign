@@ -1,0 +1,37 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  push:
+  gollum:
+  schedule:
+    - cron: 0 22 * * *
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup-python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.7
+
+      - name: install-requirement
+        run: |
+          pip install -r requirements.txt
+
+      - name: sing
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          SUCCESS: ${{ secrets.SUCCESS }}
+          MAIL: ${{ secrets.MAIL }}
+          KEY: ${{ secrets.KEY }}
+        run: |
+          python3 main.py
